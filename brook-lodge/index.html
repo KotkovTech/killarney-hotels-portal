@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Brook Lodge Boutique Hotel | 4-Star Luxury Sanctuary Killarney</title>
+  <meta name="description" content="Official website of 4-Star Brook Lodge Boutique Hotel Killarney. Featuring 30 bespoke rooms and 13 suite categories, private landscaped gardens, artisanal Kerry breakfast, and Danny Mann dining.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./styles.css?v=1785711175110_ideal">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div>
+      <span><svg style="width:14px; height:14px; display:inline-block; vertical-align:-2px; stroke:#D4AF37; fill:none; margin-right:4px; flex-shrink:0;" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> Monsignor O'Flaherty Road, High Street, Killarney, Co. Kerry, Ireland</span>
+      <span style="margin-left: 1.5rem;"><svg style="width:14px; height:14px; display:inline-block; vertical-align:-2px; stroke:#D4AF37; fill:none; margin-right:4px; flex-shrink:0;" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> +353 (0)64 663 2388</span>
+      <span style="margin-left: 1.5rem;"><svg style="width:14px; height:14px; display:inline-block; vertical-align:-2px; stroke:#D4AF37; fill:none; margin-right:4px; flex-shrink:0;" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> info@brooklodgekillarney.com</span>
+    </div>
+    <div class="top-bar-links">
+      <span>Free Private On-Site Parking & Wi-Fi Included</span>
+      <a href="#vouchers">Gift Vouchers</a>
+      <a href="#offers">Special Offers</a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="brand-logo">
+      <span class="brand-title">Brook Lodge</span>
+      <span class="brand-subtitle">4-Star Boutique Hotel • Killarney</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#suites">Suites & Rooms (13 Types)</a></li>
+      <li><a href="#gardens">Private Gardens</a></li>
+      <li><a href="#breakfast">Kerry Breakfast</a></li>
+      <li><a href="#gallery">Official Photo Archive</a></li>
+      <li><a href="#golf">Golf in Kerry</a></li>
+      <li><a href="#offers">Offers & Vouchers</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+    <div class="nav-book-btn">
+      <button class="btn-champagne" onclick="document.getElementById('bookingBar').scrollIntoView({behavior: 'smooth'})">Book Direct</button>
+    </div>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Mobile Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: linear-gradient(rgba(10,27,20,0.45), rgba(10,27,20, 0.45)), url('./assets/images/brook_brook_lodge_1.jpg');"></div>
+    <div class="hero-content">
+      <span class="hero-tag">A QUINTESSENTIALLY IRISH BOUTIQUE EXPERIENCE</span>
+      <h1 class="hero-title">Peaceful Elegance & Private Gardens</h1>
+      <p class="hero-subtitle">A classic Georgian manor retreat situated at the end of High Street. Surrounded by sky-high beech and lime trees, private landscaped gardens, 30 bespoke rooms & luxury suites, and award-winning Kerry breakfast.</p>
+    </div>
+
+    <!-- Booking Bar -->
+    <div class="booking-bar-wrapper" id="bookingBar">
+      <form id="bookingForm" class="booking-bar">
+        <div class="booking-field">
+          <label for="checkin">Arrival Date</label>
+          <input type="date" id="checkin" required>
+        </div>
+        <div class="booking-field">
+          <label for="checkout">Departure Date</label>
+          <input type="date" id="checkout" required>
+        </div>
+        <div class="booking-field">
+          <label for="suiteType">Suite & Room Category</label>
+          <select id="suiteType">
+            <option value="Penthouse Sanctuary">Penthouse Sanctuary</option>
+            <option value="Garden Suite">Garden Suite</option>
+            <option value="Suite Brook">Suite Brook</option>
+            <option value="Jacuzzi Suite">Jacuzzi Suite</option>
+            <option value="Loft Suite">Loft Suite</option>
+            <option value="Suite Home">Suite Home</option>
+            <option value="Deluxe Double & Twin with A/C">Deluxe Double with A/C</option>
+            <option value="Superior Double & Twin">Superior Double & Twin</option>
+            <option value="Classic Double & Twin">Classic Double & Twin</option>
+            <option value="Family Room">Family Room</option>
+            <option value="Triple Room">Triple Room</option>
+            <option value="Pet Friendly Room">Pet Friendly Room</option>
+          </select>
+        </div>
+        <div class="booking-field">
+          <label for="guests">Guests & Rate</label>
+          <select id="guests">
+            <option value="2 Adults (Best Rate Guarantee)">2 Adults (Best Rate Direct)</option>
+            <option value="1 Adult">1 Adult</option>
+            <option value="3 Guests">3 Guests</option>
+            <option value="Family (4 Guests)">Family (2 Adults, 2 Children)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-champagne">Reserve Suite</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="section" id="overview">
+    <div class="sanctuary-grid">
+      <div class="sanctuary-content">
+        <span class="section-subtitle">THE BROOK LODGE EXPERIENCE</span>
+        <h2>Your Private Oasis Off High Street</h2>
+        <p>This is a classic old-school weekend retreat, the sort of place to come for proper peace and quiet, to get away from the noise of people needing to see and be seen. Instead everyone is here for the great variety of a deep night’s sleep and the chance to sign off from day-to-day stress.</p>
+        <p class="sanctuary-desc">The deeply pretty Georgian manor house sits surrounded by exquisite gardens, stone fountains, and an avenue of sky-high beech and lime trees. With 30 Guest rooms and Suites, the hotel offers a true quintessentially Irish understated luxury experience.</p>
+      </div>
+      <div>
+        <div class="sanctuary-img-wrapper"><img src="./assets/images/brook_brook_lodge_3.jpg" alt="Brook Lodge Private Gardens"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete 13 Suites Showcase with Archive Photos -->
+  <section class="section" id="suites">
+    <div class="section-header">
+      <span class="section-subtitle">30 BESPOKE ROOMS & 13 SUITE CATEGORIES</span>
+      <h2 class="section-title">Luxurious Suites & Accommodations</h2>
+      <p>Every room is elegant, featuring beautiful soft furnishings, Egyptian cotton linens, espresso bars, and views across our private gardens.</p>
+    </div>
+
+    <div class="rooms-grid">
+      <!-- 1. Penthouse -->
+      <div class="room-card">
+        <div class="room-img-wrapper">
+          <img src="./assets/images/brook_af6a6672.jpg" alt="Penthouse" class="room-img">
+          <span class="room-badge">Top Floor Executive</span>
+        </div>
+        <div class="room-details">
+          <div>
+            <h3 class="room-title">Penthouse Sanctuary</h3>
+            <div class="room-meta"><span>Size:  58 m²</span><span>Capacity:  2 Guests</span><span>⛰️ Mountain Vistas</span></div>
+            <p>Our exclusive top-floor penthouse offering sweeping views of the Killarney mountains, separate lounge, and marble spa bath.</p>
+          </div>
+          <div class="room-price-row">
+            <div class="room-price">€320 <span>/ night</span></div>
+            <button class="btn-outline-emerald" onclick="openModal('Penthouse Sanctuary', 'Includes penthouse lounge access, private check-in, Nespresso bar, and mountain sunset views.')">Full Specs ➔</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Garden Suite -->
+      <div class="room-card">
+        <div class="room-img-wrapper">
+          <img src="./assets/images/brook_af6a6682.jpg" alt="Garden Suite" class="room-img">
+          <span class="room-badge">Garden Terrace</span>
+        </div>
+        <div class="room-details">
+          <div>
+            <h3 class="room-title">Garden Suite</h3>
+            <div class="room-meta"><span>Size:  48 m²</span><span>Capacity:  2 Guests</span><span>🌿 Private Terrace</span></div>
+            <p>Opens directly onto our manicured grounds. Features plush king bed, deep soaking tub, and floor-to-ceiling garden windows.</p>
+          </div>
+          <div class="room-price-row">
+            <div class="room-price">€265 <span>/ night</span></div>
+            <button class="btn-outline-emerald" onclick="openModal('Garden Suite', 'Ground floor suite with direct access to private lavender garden.')">Full Specs ➔</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Jacuzzi Suite -->
+      <div class="room-card">
+        <div class="room-img-wrapper">
+          <img src="./assets/images/brook_af6a6685.jpg" alt="Jacuzzi Suite" class="room-img">
+          <span class="room-badge">Private Spa Tub</span>
+        </div>
+        <div class="room-details">
+          <div>
+            <h3 class="room-title">Jacuzzi Spa Suite</h3>
+            <div class="room-meta"><span>Size:  50 m²</span><span>Capacity:  2 Guests</span><span>🛁 Jacuzzi Bath</span></div>
+            <p>Luxurious romantic suite equipped with a private whirlpool Jacuzzi bath, champagne bucket, and plush bathrobes.</p>
+          </div>
+          <div class="room-price-row">
+            <div class="room-price">€280 <span>/ night</span></div>
+            <button class="btn-outline-emerald" onclick="openModal('Jacuzzi Spa Suite', 'Includes in-room Jacuzzi tub, room service option, and luxury spa bathrobes.')">Full Specs ➔</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Grid from Brook Lodge Archive -->
+  <section class="section" id="gallery">
+    <div class="section-header">
+      <span class="section-subtitle">OFFICIAL BROOK LODGE COLLECTION</span>
+      <h2 class="section-title">Estate & Garden Archive Gallery</h2>
+      <p>High-resolution photos of Georgian architecture, gardens, luxury suites, and breakfast room.</p>
+    </div>
+
+    <div class="gallery-photo-grid">
+      <div class="gallery-item"><img src="./assets/images/brook_brook_lodge_2.jpg"></div>
+      <div class="gallery-item"><img src="./assets/images/brook_brook_lodge_4.jpg"></div>
+      <div class="gallery-item"><img src="./assets/images/brook_brook_lodge_5.jpg"></div>
+      <div class="gallery-item"><img src="./assets/images/brook_brook_lodge_6.jpg"></div>
+      <div class="gallery-item"><img src="./assets/images/brook_brook_lodge_7.jpg"></div>
+      <div class="gallery-item"><img src="./assets/images/brook_brook_lodge_8.jpg"></div>
+    </div>
+  </section>
+
+  <!-- Gourmet Kerry Breakfast -->
+  <section class="section breakfast-section" id="breakfast">
+    <div class="two-col-section">
+      <div>
+        <span class="section-subtitle">MORNING GASTRONOMY</span>
+        <h2 class="section-heading-lg">Artisanal Kerry Breakfast</h2>
+        <p>Begin your morning in our sunlit breakfast room with freshly baked soda bread, local Kerry farm butter, wild berry preserves, organic porridge with Irish cream, and cooked-to-order full Irish breakfasts.</p>
+        <div class="btn-row">
+          <button class="btn-champagne" onclick="openModal('Artisanal Breakfast Menu', 'Served daily 8:00 AM - 10:30 AM.<br><br><strong>Includes:</strong><br>• Full Irish Breakfast (Poached Kerry eggs, sausage, bacon, black pudding)<br>• Smoked Atlantic Salmon with Scrambled Eggs<br>• Homemade Soda Bread & Berry Compote')">Explore Breakfast Menu</button>
+        </div>
+      </div>
+      <div>
+        <div class="breakfast-img-wrapper"><img src="./assets/images/brook_brook_lodge_10.jpg" alt="Breakfast"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      <span>© 2026 Brook Lodge Boutique Hotel. All rights reserved. Redesigned with World-Class Hyper-Luxury Standards.</span>
+      <span>Killarney, Co. Kerry, Ireland</span>
+    </div>
+  </footer>
+
+  <!-- Modal & Toast -->
+  <div class="modal-overlay" id="globalModal"><div class="modal-card"><button class="modal-close" onclick="closeModal()">✕</button><h2 id="modalTitle" style="color:#FFF; margin-bottom:1rem;">Modal Title</h2><div id="modalBody">Modal Body</div></div></div>
+  <div class="toast-container"><div class="toast" id="toast">Notification Message</div></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

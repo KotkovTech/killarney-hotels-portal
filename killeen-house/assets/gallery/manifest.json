@@ -1,0 +1,184 @@
+[
+  {
+    "id": 1,
+    "src": "/gallery/gallery_1.jpg",
+    "type": "image",
+    "category": "hen-parties",
+    "categoryName": "Hen Parties"
+  },
+  {
+    "id": 2,
+    "src": "/gallery/gallery_2.jpg",
+    "type": "image",
+    "category": "private-celebrations",
+    "categoryName": "Private Celebrations"
+  },
+  {
+    "id": 3,
+    "src": "/gallery/gallery_3.jpg",
+    "type": "image",
+    "category": "private-celebrations",
+    "categoryName": "Private Celebrations"
+  },
+  {
+    "id": 4,
+    "src": "/gallery/gallery_4.jpg",
+    "type": "image",
+    "category": "private-celebrations",
+    "categoryName": "Private Celebrations"
+  },
+  {
+    "id": 5,
+    "src": "/gallery/gallery_5.mp4",
+    "type": "video",
+    "category": "food-styling",
+    "categoryName": "Food & Styling"
+  },
+  {
+    "id": 6,
+    "src": "/gallery/gallery_6.mp4",
+    "type": "video",
+    "category": "private-celebrations",
+    "categoryName": "Private Celebrations"
+  },
+  {
+    "id": 7,
+    "src": "/gallery/gallery_7.mp4",
+    "type": "video",
+    "category": "private-celebrations",
+    "categoryName": "Private Celebrations"
+  },
+  {
+    "id": 8,
+    "src": "/gallery/gallery_8.mp4",
+    "type": "video",
+    "category": "private-celebrations",
+    "categoryName": "Private Celebrations"
+  },
+  {
+    "id": 9,
+    "src": "/gallery/gallery_9.jpg",
+    "type": "image",
+    "category": "private-celebrations",
+    "categoryName": "Private Celebrations"
+  },
+  {
+    "id": 10,
+    "src": "/gallery/gallery_10.jpg",
+    "type": "image",
+    "category": "bridal-events",
+    "categoryName": "Bridal Events"
+  },
+  {
+    "id": 11,
+    "src": "/gallery/gallery_11.jpg",
+    "type": "image",
+    "category": "bridal-events",
+    "categoryName": "Bridal Events"
+  },
+  {
+    "id": 12,
+    "src": "/gallery/gallery_12.jpg",
+    "type": "image",
+    "category": "hen-parties",
+    "categoryName": "Hen Parties"
+  },
+  {
+    "id": 13,
+    "src": "/gallery/gallery_13.jpg",
+    "type": "image",
+    "category": "bridal-events",
+    "categoryName": "Bridal Events"
+  },
+  {
+    "id": 14,
+    "src": "/gallery/gallery_14.jpg",
+    "type": "image",
+    "category": "bridal-events",
+    "categoryName": "Bridal Events"
+  },
+  {
+    "id": 15,
+    "src": "/gallery/gallery_15.jpg",
+    "type": "image",
+    "category": "bridal-events",
+    "categoryName": "Bridal Events"
+  },
+  {
+    "id": 16,
+    "src": "/gallery/gallery_16.jpg",
+    "type": "image",
+    "category": "private-celebrations",
+    "categoryName": "Private Celebrations"
+  },
+  {
+    "id": 17,
+    "src": "/gallery/gallery_17.jpg",
+    "type": "image",
+    "category": "bridal-events",
+    "categoryName": "Bridal Events"
+  },
+  {
+    "id": 18,
+    "src": "/gallery/gallery_18.jpg",
+    "type": "image",
+    "category": "bridal-events",
+    "categoryName": "Bridal Events"
+  },
+  {
+    "id": 19,
+    "src": "/gallery/gallery_19.jpg",
+    "type": "image",
+    "category": "bridal-events",
+    "categoryName": "Bridal Events"
+  },
+  {
+    "id": 20,
+    "src": "/gallery/gallery_20.jpg",
+    "type": "image",
+    "category": "bridal-events",
+    "categoryName": "Bridal Events"
+  },
+  {
+    "id": 21,
+    "src": "/gallery/gallery_21.jpg",
+    "type": "image",
+    "category": "bridal-events",
+    "categoryName": "Bridal Events"
+  },
+  {
+    "id": 22,
+    "src": "/gallery/gallery_22.jpg",
+    "type": "image",
+    "category": "hen-parties",
+    "categoryName": "Hen Parties"
+  },
+  {
+    "id": 23,
+    "src": "/gallery/gallery_23.jpg",
+    "type": "image",
+    "category": "hen-parties",
+    "categoryName": "Hen Parties"
+  },
+  {
+    "id": 24,
+    "src": "/gallery/gallery_24.jpg",
+    "type": "image",
+    "category": "hen-parties",
+    "categoryName": "Hen Parties"
+  },
+  {
+    "id": 25,
+    "src": "/gallery/gallery_25.jpg",
+    "type": "image",
+    "category": "bridal-events",
+    "categoryName": "Bridal Events"
+  },
+  {
+    "id": 26,
+    "src": "/gallery/gallery_26.jpg",
+    "type": "image",
+    "category": "private-celebrations",
+    "categoryName": "Private Celebrations"
+  }
+]

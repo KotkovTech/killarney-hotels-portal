@@ -1,0 +1,2307 @@
+/* ==========================================================================
+   Brook Lodge Boutique Hotel - Ultra-Luxury Hyper-Modern Stylesheet
+   Style Inspiration: The Dylan Amsterdam, Dormy House, Maybourne
+   ========================================================================== */
+
+:root {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --color-bg-dark: #0A1B14;
+  --color-bg-surface: #11281E;
+  --color-bg-card: #183327;
+  --color-accent-gold: #D9C3A3;
+  --color-accent-gold-light: #F2E5D5;
+  --color-accent-emerald: #2E5946;
+  --color-text-main: #FAF8F5;
+  --color-text-muted: #B3C2BA;
+  --color-border-gold: rgba(217, 195, 163, 0.25);
+
+  --shadow-lux: 0 30px 70px rgba(0, 0, 0, 0.75);
+  --shadow-gold: 0 12px 35px rgba(217, 195, 163, 0.2);
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-main);
+  line-height: 1.6;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+p { color: var(--color-text-muted); }
+a { color: inherit; text-decoration: none; transition: var(--transition-smooth); }
+
+/* Top Announcement Bar */
+.top-bar {
+  background: #050E0A;
+  border-bottom: 1px solid rgba(217, 195, 163, 0.1);
+  padding: 0.5rem 3.5rem;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-muted);
+}
+
+.top-bar-links a {
+  margin-left: 1.5rem;
+  color: var(--color-accent-gold);
+}
+
+/* Glass Navbar */
+.navbar {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1400px;
+  z-index: 1000;
+  padding: 1.25rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition-smooth);
+  background: rgba(17, 40, 30, 0.88);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--color-border-gold);
+  border-radius: 6px;
+}
+
+.navbar.scrolled {
+  top: 10px;
+  background: rgba(10, 27, 20, 0.96);
+  box-shadow: var(--shadow-lux);
+}
+
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FFF;
+}
+
+.brand-subtitle {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(250, 248, 245, 0.85);
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--color-accent-gold);
+}
+
+.btn-champagne {
+  background: linear-gradient(135deg, var(--color-accent-gold) 0%, #BBA583 100%);
+  color: #0A1B14;
+  padding: 0.75rem 1.8rem;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-gold);
+  transition: var(--transition-smooth);
+}
+
+.btn-champagne:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--color-accent-gold-light) 0%, var(--color-accent-gold) 100%);
+  box-shadow: 0 14px 40px rgba(217, 195, 163, 0.35);
+}
+
+.btn-outline-emerald {
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-text-main);
+  padding: 0.75rem 1.5rem;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-outline-emerald:hover {
+  border-color: var(--color-accent-gold);
+  color: var(--color-accent-gold);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(10,27,20,0.45), rgba(10,27,20,0.88)), url('./assets/images/brook_hero.jpg') center/cover no-repeat;
+  transform: scale(1.05);
+  animation: heroPulse 22s infinite alternate ease-in-out;
+}
+
+@keyframes heroPulse {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.15); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 950px;
+  margin-top: 2rem;
+}
+
+.hero-tag {
+  color: var(--color-accent-gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  color: #FFF;
+  font-family: var(--font-serif);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: rgba(250, 248, 245, 0.88);
+  max-width: 720px;
+  margin: 0 auto 3rem auto;
+}
+
+/* Booking Bar */
+.booking-bar-wrapper {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1200px;
+  z-index: 100;
+}
+
+.booking-bar {
+  background: rgba(17, 40, 30, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border-gold);
+  border-radius: 6px;
+  padding: 1.25rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: var(--shadow-lux);
+}
+
+.booking-field { display: flex; flex-direction: column; }
+.booking-field label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-accent-gold);
+  margin-bottom: 0.4rem;
+}
+.booking-field input, .booking-field select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(217, 195, 163, 0.3);
+  color: var(--color-text-main);
+  padding: 0.4rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+.booking-field input:focus, .booking-field select:focus {
+  border-color: var(--color-accent-gold);
+}
+
+/* Layout Sections */
+.section {
+  padding: 7.5rem 3.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4.5rem auto;
+}
+
+.section-subtitle {
+  color: var(--color-accent-gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.section-title {
+  font-size: 3.25rem;
+  color: #FFF;
+  margin-bottom: 1.25rem;
+}
+
+/* Rooms & Suites Grid */
+.room-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid rgba(217, 195, 163, 0.2);
+  color: var(--color-text-muted);
+  padding: 0.65rem 1.75rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: var(--color-accent-gold);
+  color: #0A1B14;
+  border-color: var(--color-accent-gold);
+  font-weight: 700;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2.5rem;
+}
+
+.room-card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(217, 195, 163, 0.18);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.room-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-accent-gold);
+  box-shadow: var(--shadow-lux);
+}
+
+.room-img-wrapper {
+  position: relative;
+  height: 270px;
+  overflow: hidden;
+}
+
+.room-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.room-card:hover .room-img { transform: scale(1.08); }
+
+.room-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(10, 27, 20, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--color-accent-gold);
+  padding: 0.35rem 0.85rem;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-border-gold);
+}
+
+.room-details {
+  padding: 2.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.room-title { font-size: 1.75rem; color: #FFF; margin-bottom: 0.5rem; }
+.room-meta { display: flex; gap: 1.5rem; font-size: 0.85rem; color: var(--color-accent-gold); margin-bottom: 1rem; }
+
+.room-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(217, 195, 163, 0.18);
+  padding-top: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.room-price { font-size: 1.5rem; font-family: var(--font-serif); color: #FFF; }
+
+/* Sanctuary & Garden Showcase */
+.sanctuary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-gold);
+  padding: 4.5rem;
+  border-radius: 6px;
+}
+
+/* Modals & Toasts */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active { display: flex; opacity: 1; }
+
+.modal-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-gold);
+  border-radius: 6px;
+  width: 90%;
+  max-width: 680px;
+  padding: 3rem;
+  position: relative;
+  box-shadow: var(--shadow-lux);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.toast-container { position: fixed; bottom: 2rem; right: 2rem; z-index: 3000; }
+.toast {
+  background: var(--color-bg-surface);
+  border-left: 4px solid var(--color-accent-gold);
+  padding: 1.25rem 2rem;
+  border-radius: 3px;
+  box-shadow: var(--shadow-lux);
+  color: var(--color-text-main);
+  font-size: 0.9rem;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* Footer */
+footer {
+  background: #050E0A;
+  border-top: 1px solid rgba(217, 195, 163, 0.15);
+  padding: 5rem 3.5rem 2rem 3.5rem;
+}
+
+.footer-grid {
+  max-width: 1400px;
+  margin: 0 auto 4rem auto;
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(217, 195, 163, 0.15);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+
+/* ==========================================================================
+   New CSS Classes (replacing inline styles)
+   ========================================================================== */
+
+.gallery-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.sanctuary-img-wrapper { width: 100%; height: 380px; border-radius: 6px; overflow: hidden; border: 1px solid var(--color-border-gold); }
+.sanctuary-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.breakfast-section { background: var(--color-bg-surface); border-radius: 6px; border: 1px solid var(--color-border-gold); margin-top: 3rem; }
+.breakfast-img-wrapper { width: 100%; height: 320px; border-radius: 6px; overflow: hidden; }
+.breakfast-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.btn-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.gallery-item { border-radius: 6px; overflow: hidden; border: 1px solid var(--color-border-gold); height: 220px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.section-heading-lg { font-size: clamp(1.8rem, 4vw, 3rem); color: #FFF; margin-bottom: 1rem; }
+
+.two-col-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Comprehensive Mobile & Tablet Responsiveness
+   ========================================================================== */
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.mobile-toggle span {
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent-gold);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mobile-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 1100px) {
+  .navbar { width: 96%; padding: 0.85rem 1.5rem; }
+  .nav-links { gap: 0.8rem; font-size: 0.72rem; }
+  .section { padding: 5rem 2.5rem; }
+  .sanctuary-grid { gap: 2.5rem; }
+}
+
+@media (max-width: 1024px) {
+  .top-bar { display: none; }
+  .mobile-toggle { display: flex; }
+  .navbar { top: 10px; width: 94%; padding: 0.75rem 1.25rem; }
+  .brand-title { font-size: 1.4rem; }
+  .brand-subtitle { font-size: 0.55rem; }
+  .nav-book-btn { display: none !important; }
+
+  .nav-links {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 80%; max-width: 320px; height: 100vh;
+    background: rgba(10, 12, 15, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8rem;
+    padding: 4rem 2rem;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 40px rgba(0,0,0,0.8);
+    border-left: 1px solid rgba(212, 175, 55, 0.25);
+    z-index: 1050;
+  }
+  .nav-links.active { right: 0; }
+  .nav-links a { font-size: 1.05rem; display: block; padding: 0.3rem 0; }
+
+  .hero { height: auto !important; min-height: 520px !important; padding: 6rem 1.25rem 3rem 1.25rem !important; display: flex !important; flex-direction: column !important; justify-content: flex-start !important; }
+  .hero-bg { transform: none !important; animation: none !important; }
+  .hero-title { font-size: clamp(1.8rem, 5vw, 2.5rem) !important; line-height: 1.15; }
+  .hero-subtitle { font-size: 0.92rem; padding: 0; }
+
+  .booking-bar-wrapper { position: relative !important; bottom: auto !important; left: auto !important; transform: none !important; width: 100% !important; margin-top: 1.5rem !important; }
+  .booking-bar { grid-template-columns: 1fr !important; gap: 1rem !important; padding: 1.25rem !important; }
+
+  .section { padding: 3.5rem 1.25rem !important; }
+  .section-title { font-size: 2.25rem; }
+
+  .sanctuary-grid,
+  .two-col-section,
+  .voucher-card,
+  .breakfast-section { 
+    grid-template-columns: 1fr !important; 
+    padding: 1.5rem 1.25rem !important; 
+    gap: 1.5rem !important; 
+    margin-top: 1.5rem !important;
+  }
+
+  .rooms-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+  .gallery-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .gallery-photo-grid img { height: 180px; }
+  .sanctuary-img-wrapper { height: 240px !important; width: 100% !important; }
+  .breakfast-img-wrapper { height: 240px !important; width: 100% !important; }
+
+  .room-tabs { gap: 0.5rem; }
+  .tab-btn { padding: 0.5rem 1.2rem; font-size: 0.72rem; }
+
+  footer { padding: 3rem 1.5rem 1.5rem 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+
+@media (max-width: 600px) {
+  .navbar { top: 8px; width: 96%; padding: 0.65rem 1rem; }
+  .brand-title { font-size: 1.2rem; letter-spacing: 0.05em; }
+  .brand-subtitle { font-size: 0.5rem; }
+
+  .hero { min-height: 550px; }
+  .hero-title { font-size: 2rem; }
+  .hero-subtitle { font-size: 0.88rem; }
+
+  .booking-bar { grid-template-columns: 1fr; gap: 0.85rem; }
+
+  .section-title { font-size: 1.85rem; }
+  .gallery-photo-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .gallery-photo-grid img { height: 160px; }
+  .gallery-item { height: 150px; }
+  .sanctuary-img-wrapper { height: 200px; }
+  .section { padding: 3rem 1rem; }
+  .btn-row { flex-direction: column; width: 100%; }
+  .btn-row .btn-gold, .btn-row .btn-outline { width: 100%; text-align: center; }
+
+  .room-details { padding: 1.5rem; }
+  .room-title { font-size: 1.35rem; }
+  .room-meta { flex-wrap: wrap; gap: 0.75rem; font-size: 0.78rem; }
+  .room-img-wrapper { height: 220px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .modal-card { width: 95%; padding: 1.5rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.7rem; }
+  .section-title { font-size: 1.55rem; }
+  .section { padding: 3rem 1rem; }
+  .gallery-photo-grid { grid-template-columns: 1fr; }
+  .gallery-photo-grid img { height: 200px; }
+}
+
+
+
+/* UIverse & Refero Liquid Glass Design Tokens */
+.btn-gold, .btn-champagne {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--color-accent-gold, #D4AF37) 0%, #B89628 100%);
+  color: #0D0F12;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold:hover, .btn-champagne:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(212, 175, 55, 0.4);
+  filter: brightness(1.1);
+}
+
+.btn-gold:active, .btn-champagne:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.btn-outline, .btn-outline-gold {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border-gold, rgba(212, 175, 55, 0.3));
+  color: #FFF;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-outline:hover, .btn-outline-gold:hover {
+  border-color: var(--color-accent-gold, #D4AF37);
+  color: var(--color-accent-gold, #D4AF37);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.btn-outline:active, .btn-outline-gold:active {
+  transform: scale(0.97);
+}
+
+/* Liquid Glass Cards */
+.highlight-card, .room-card, .feature-box, .accolades-box, .golfbase-box, .voucher-card {
+  background: var(--color-bg-surface, #15181E);
+  border: 1px solid var(--color-border-gold, rgba(212, 175, 55, 0.25));
+  border-radius: 8px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.highlight-card:hover, .room-card:hover, .feature-box:hover {
+  border-color: var(--color-accent-gold, #D4AF37);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
+}
+
+/* ==========================================================================
+   ULTRA-LUXURY RESPONSIVE OVERRIDES (v5_20260802)
+   Fixes header image visibility, guarantees 1-column vertical alignment on mobile,
+   and prevents any side-by-side squeezing or element overflow.
+   ========================================================================== */
+
+/* --- Global Reset & Viewport Constraints --- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, span, a, label, td, th, blockquote {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+img, video, iframe, embed, object, svg {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/* ==========================================================================
+   HERO HEADER: FULL IMAGE VISIBILITY & BEAUTIFUL PROPORTIONS
+   ========================================================================== */
+.hero {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 82vh !important;
+  padding: 8rem 1.5rem 4rem 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  background-color: #050E0A !important;
+}
+
+.hero-bg {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  z-index: 1 !important;
+  filter: brightness(0.62) !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 5 !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 4.5rem) !important;
+  line-height: 1.15 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 1.25rem !important;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.7) !important;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem) !important;
+  line-height: 1.6 !important;
+  color: rgba(250, 248, 245, 0.9) !important;
+  max-width: 750px !important;
+  margin: 0 auto 2rem auto !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7) !important;
+}
+
+.hero-tag {
+  display: inline-block !important;
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem) !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: #D4AF37 !important;
+  background: rgba(10, 27, 20, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  padding: 0.4rem 1.2rem !important;
+  border-radius: 50px !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* ==========================================================================
+   BOOKING BAR IN NATURAL FLOW
+   ========================================================================== */
+.booking-bar-wrapper {
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 2rem auto 0 auto !important;
+  z-index: 10 !important;
+}
+
+.booking-bar {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 1.25rem !important;
+  padding: 1.5rem !important;
+  background: rgba(17, 40, 30, 0.92) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6) !important;
+}
+
+/* ==========================================================================
+   NAVBAR & BURGER MENU
+   ========================================================================== */
+.navbar {
+  box-sizing: border-box !important;
+  max-width: calc(100vw - 24px) !important;
+  overflow: hidden !important;
+}
+
+@media (min-width: 1025px) {
+  .navbar {
+    top: 15px !important;
+    padding: 0.75rem 1.5rem !important;
+    gap: 1rem !important;
+  }
+  .brand-title {
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem) !important;
+    white-space: nowrap !important;
+  }
+  .nav-links {
+    display: flex !important;
+    gap: clamp(0.5rem, 1.1vw, 1.4rem) !important;
+    align-items: center !important;
+    list-style: none !important;
+  }
+  .nav-links a {
+    font-size: clamp(0.65rem, 0.8vw, 0.78rem) !important;
+    white-space: nowrap !important;
+  }
+  .nav-book-btn { display: flex !important; }
+  .mobile-toggle { display: none !important; }
+}
+
+@media (max-width: 1024px) {
+  .top-bar { display: none !important; }
+
+  .navbar {
+    top: 8px !important;
+    width: calc(100% - 20px) !important;
+    padding: 0.75rem 1rem !important;
+  }
+  .brand-title { font-size: 1.25rem !important; }
+
+  .nav-links:not(.active) { display: none !important; }
+  .nav-book-btn { display: none !important; }
+
+  .mobile-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    z-index: 1100 !important;
+  }
+  .mobile-toggle span {
+    display: block !important;
+    width: 22px !important;
+    height: 2px !important;
+    background-color: #D4AF37 !important;
+    transition: all 0.3s ease !important;
+  }
+  .mobile-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+  }
+  .mobile-toggle.active span:nth-child(2) { opacity: 0 !important; }
+  .mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 88% !important;
+    max-width: 360px !important;
+    height: 100vh !important;
+    background: rgba(8, 11, 15, 0.98) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 0.85rem !important;
+    padding: 5rem 1.75rem 2.5rem 1.75rem !important;
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.9) !important;
+    border-left: 1px solid rgba(212, 175, 55, 0.3) !important;
+    overflow-y: auto !important;
+    z-index: 1050 !important;
+  }
+  .nav-links.active li { width: 100% !important; list-style: none !important; }
+  .nav-links.active a {
+    font-size: 1rem !important;
+    color: #FAF8F5 !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 0.75rem 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE & TABLET: STRICT SINGLE-COLUMN VERTICAL STACKING FOR ALL SECTIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Force single column vertical layout for ALL grids and banners */
+  .sanctuary-grid,
+  .rozzers-banner,
+  .golfbar-card,
+  .pub-banner,
+  .highlights-grid,
+  .rooms-grid,
+  .two-col-section,
+  .contact-grid,
+  .voucher-card,
+  .feature-box,
+  .accolades-box,
+  .golfbase-box,
+  .breakfast-section,
+  .offers-grid,
+  .packages-grid,
+  .grid-2col,
+  .grid-3col,
+  .grid-4col,
+  .schedule-box {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 1.5rem 1rem !important;
+    gap: 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Make every child inside these blocks take 100% full width */
+  .sanctuary-grid > *,
+  .rozzers-banner > *,
+  .golfbar-card > *,
+  .pub-banner > *,
+  .highlights-grid > *,
+  .rooms-grid > *,
+  .two-col-section > *,
+  .contact-grid > *,
+  .voucher-card > *,
+  .feature-box > *,
+  .accolades-box > *,
+  .golfbase-box > *,
+  .breakfast-section > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .booking-bar {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 1.25rem 1rem !important;
+  }
+
+  .section {
+    padding: 3rem 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .sanctuary-img-wrapper,
+  .breakfast-img-wrapper,
+  .room-img-wrapper {
+    height: 220px !important;
+    width: 100% !important;
+  }
+
+  .btn-row {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .btn-row > * {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* ==========================================================================
+   PHONE: max-width 600px
+   ========================================================================== */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 75vh !important;
+    padding: 6rem 0.85rem 2.5rem 0.85rem !important;
+  }
+
+  .section {
+    padding: 2.5rem 0.75rem !important;
+  }
+
+  .gallery-photo-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem !important;
+  }
+  .gallery-photo-grid img { height: 130px !important; }
+
+  .sanctuary-img-wrapper,
+  .breakfast-img-wrapper,
+  .room-img-wrapper {
+    height: 180px !important;
+  }
+}
+
+
+/* ==========================================================================
+   ULTRA-LUXURY RESPONSIVE OVERRIDES (v5_20260802)
+   Fixes header image visibility, guarantees 1-column vertical alignment on mobile,
+   and prevents any side-by-side squeezing or element overflow.
+   ========================================================================== */
+
+/* --- Global Reset & Viewport Constraints --- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, span, a, label, td, th, blockquote {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+img, video, iframe, embed, object, svg {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/* ==========================================================================
+   HERO HEADER: FULL IMAGE VISIBILITY & BEAUTIFUL PROPORTIONS
+   ========================================================================== */
+.hero {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 82vh !important;
+  padding: 8rem 1.5rem 4rem 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  
+  background-color: #050E0A !important;
+}
+
+.hero-bg {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  z-index: 1 !important;
+  filter: brightness(0.85) !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 5 !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 4.5rem) !important;
+  line-height: 1.15 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 1.25rem !important;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.7) !important;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem) !important;
+  line-height: 1.6 !important;
+  color: rgba(250, 248, 245, 0.9) !important;
+  max-width: 750px !important;
+  margin: 0 auto 2rem auto !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7) !important;
+}
+
+.hero-tag {
+  display: inline-block !important;
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem) !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: #D4AF37 !important;
+  background: rgba(10, 27, 20, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  padding: 0.4rem 1.2rem !important;
+  border-radius: 50px !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* ==========================================================================
+   BOOKING BAR IN NATURAL FLOW
+   ========================================================================== */
+.booking-bar-wrapper {
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 2rem auto 0 auto !important;
+  z-index: 10 !important;
+}
+
+.booking-bar {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 1.25rem !important;
+  padding: 1.5rem !important;
+  background: rgba(17, 40, 30, 0.92) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6) !important;
+}
+
+/* ==========================================================================
+   NAVBAR & BURGER MENU
+   ========================================================================== */
+.navbar {
+  box-sizing: border-box !important;
+  max-width: calc(100vw - 24px) !important;
+  
+}
+
+@media (min-width: 1025px) {
+  .navbar {
+    top: 15px !important;
+    padding: 0.75rem 1.5rem !important;
+    gap: 1rem !important;
+  }
+  .brand-title {
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem) !important;
+    white-space: nowrap !important;
+  }
+  .nav-links {
+    display: flex !important;
+    gap: clamp(0.5rem, 1.1vw, 1.4rem) !important;
+    align-items: center !important;
+    list-style: none !important;
+  }
+  .nav-links a {
+    font-size: clamp(0.65rem, 0.8vw, 0.78rem) !important;
+    white-space: nowrap !important;
+  }
+  .nav-book-btn { display: flex !important; }
+  .mobile-toggle { display: none !important; }
+}
+
+@media (max-width: 1024px) {
+  .top-bar { display: none !important; }
+
+  .navbar {
+    top: 8px !important;
+    width: calc(100% - 20px) !important;
+    padding: 0.75rem 1rem !important;
+  }
+  .brand-title { font-size: 1.25rem !important; }
+
+  .nav-links:not(.active) { display: none !important; }
+  .nav-book-btn { display: none !important; }
+
+  .mobile-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    z-index: 1100 !important;
+  }
+  .mobile-toggle span {
+    display: block !important;
+    width: 22px !important;
+    height: 2px !important;
+    background-color: #D4AF37 !important;
+    transition: all 0.3s ease !important;
+  }
+  .mobile-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+  }
+  .mobile-toggle.active span:nth-child(2) { opacity: 0 !important; }
+  .mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 88% !important;
+    max-width: 360px !important;
+    height: 100vh !important;
+    background: rgba(8, 11, 15, 0.98) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 0.85rem !important;
+    padding: 5rem 1.75rem 2.5rem 1.75rem !important;
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.9) !important;
+    border-left: 1px solid rgba(212, 175, 55, 0.3) !important;
+    overflow-y: auto !important;
+    z-index: 1050 !important;
+  }
+  .nav-links.active li { width: 100% !important; list-style: none !important; }
+  .nav-links.active a {
+    font-size: 1rem !important;
+    color: #FAF8F5 !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 0.75rem 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE & TABLET: STRICT SINGLE-COLUMN VERTICAL STACKING FOR ALL SECTIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Force single column vertical layout for ALL grids and banners */
+  .sanctuary-grid,
+  .rozzers-banner,
+  .golfbar-card,
+  .pub-banner,
+  .highlights-grid,
+  .rooms-grid,
+  .two-col-section,
+  .contact-grid,
+  .voucher-card,
+  .feature-box,
+  .accolades-box,
+  .golfbase-box,
+  .breakfast-section,
+  .offers-grid,
+  .packages-grid,
+  .grid-2col,
+  .grid-3col,
+  .grid-4col,
+  .schedule-box {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 1.5rem 1rem !important;
+    gap: 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Make every child inside these blocks take 100% full width */
+  .sanctuary-grid > *,
+  .rozzers-banner > *,
+  .golfbar-card > *,
+  .pub-banner > *,
+  .highlights-grid > *,
+  .rooms-grid > *,
+  .two-col-section > *,
+  .contact-grid > *,
+  .voucher-card > *,
+  .feature-box > *,
+  .accolades-box > *,
+  .golfbase-box > *,
+  .breakfast-section > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .booking-bar {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 1.25rem 1rem !important;
+  }
+
+  .section {
+    padding: 3rem 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .sanctuary-img-wrapper,
+  .breakfast-img-wrapper,
+  .room-img-wrapper {
+    height: 220px !important;
+    width: 100% !important;
+  }
+
+  .btn-row {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .btn-row > * {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* ==========================================================================
+   PHONE: max-width 600px
+   ========================================================================== */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 75vh !important;
+    padding: 6rem 0.85rem 2.5rem 0.85rem !important;
+  }
+
+  .section {
+    padding: 2.5rem 0.75rem !important;
+  }
+
+  .gallery-photo-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem !important;
+  }
+  .gallery-photo-grid img { height: 130px !important; }
+
+  .sanctuary-img-wrapper,
+  .breakfast-img-wrapper,
+  .room-img-wrapper {
+    height: 180px !important;
+  }
+}
+
+
+/* ==========================================================================
+   ULTRA-LUXURY RESPONSIVE OVERRIDES (v5_20260802)
+   Fixes header image visibility, guarantees 1-column vertical alignment on mobile,
+   and prevents any side-by-side squeezing or element overflow.
+   ========================================================================== */
+
+/* --- Global Reset & Viewport Constraints --- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, span, a, label, td, th, blockquote {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+img, video, iframe, embed, object, svg {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/* ==========================================================================
+   HERO HEADER: FULL IMAGE VISIBILITY & BEAUTIFUL PROPORTIONS
+   ========================================================================== */
+.hero {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 82vh !important;
+  padding: 8rem 1.5rem 4rem 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  
+  background-color: #050E0A !important;
+}
+
+.hero-bg {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  z-index: 1 !important;
+  filter: brightness(0.85) !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 5 !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 4.5rem) !important;
+  line-height: 1.15 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 1.25rem !important;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.7) !important;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem) !important;
+  line-height: 1.6 !important;
+  color: rgba(250, 248, 245, 0.9) !important;
+  max-width: 750px !important;
+  margin: 0 auto 2rem auto !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7) !important;
+}
+
+.hero-tag {
+  display: inline-block !important;
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem) !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: #D4AF37 !important;
+  background: rgba(10, 27, 20, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  padding: 0.4rem 1.2rem !important;
+  border-radius: 50px !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* ==========================================================================
+   BOOKING BAR IN NATURAL FLOW
+   ========================================================================== */
+.booking-bar-wrapper {
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 2rem auto 0 auto !important;
+  z-index: 10 !important;
+}
+
+.booking-bar {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 1.25rem !important;
+  padding: 1.5rem !important;
+  background: rgba(17, 40, 30, 0.92) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6) !important;
+}
+
+/* ==========================================================================
+   NAVBAR & BURGER MENU
+   ========================================================================== */
+.navbar {
+  box-sizing: border-box !important;
+  max-width: calc(100vw - 24px) !important;
+  
+}
+
+@media (min-width: 1025px) {
+  .navbar {
+    top: 15px !important;
+    padding: 0.75rem 1.5rem !important;
+    gap: 1rem !important;
+  }
+  .brand-title {
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem) !important;
+    white-space: nowrap !important;
+  }
+  .nav-links {
+    display: flex !important;
+    gap: clamp(0.5rem, 1.1vw, 1.4rem) !important;
+    align-items: center !important;
+    list-style: none !important;
+  }
+  .nav-links a {
+    font-size: clamp(0.65rem, 0.8vw, 0.78rem) !important;
+    white-space: nowrap !important;
+  }
+  .nav-book-btn { display: flex !important; }
+  .mobile-toggle { display: none !important; }
+}
+
+@media (max-width: 1024px) {
+  .top-bar { display: none !important; }
+
+  .navbar {
+    top: 8px !important;
+    width: calc(100% - 20px) !important;
+    padding: 0.75rem 1rem !important;
+  }
+  .brand-title { font-size: 1.25rem !important; }
+
+  .nav-links:not(.active) { display: none !important; }
+  .nav-book-btn { display: none !important; }
+
+  .mobile-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    z-index: 1100 !important;
+  }
+  .mobile-toggle span {
+    display: block !important;
+    width: 22px !important;
+    height: 2px !important;
+    background-color: #D4AF37 !important;
+    transition: all 0.3s ease !important;
+  }
+  .mobile-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+  }
+  .mobile-toggle.active span:nth-child(2) { opacity: 0 !important; }
+  .mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 88% !important;
+    max-width: 360px !important;
+    height: 100vh !important;
+    background: rgba(8, 11, 15, 0.98) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 0.85rem !important;
+    padding: 5rem 1.75rem 2.5rem 1.75rem !important;
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.9) !important;
+    border-left: 1px solid rgba(212, 175, 55, 0.3) !important;
+    overflow-y: auto !important;
+    z-index: 1050 !important;
+  }
+  .nav-links.active li { width: 100% !important; list-style: none !important; }
+  .nav-links.active a {
+    font-size: 1rem !important;
+    color: #FAF8F5 !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 0.75rem 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE & TABLET: STRICT SINGLE-COLUMN VERTICAL STACKING FOR ALL SECTIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Force single column vertical layout for ALL grids and banners */
+  .sanctuary-grid,
+  .rozzers-banner,
+  .golfbar-card,
+  .pub-banner,
+  .highlights-grid,
+  .rooms-grid,
+  .two-col-section,
+  .contact-grid,
+  .voucher-card,
+  .feature-box,
+  .accolades-box,
+  .golfbase-box,
+  .breakfast-section,
+  .offers-grid,
+  .packages-grid,
+  .grid-2col,
+  .grid-3col,
+  .grid-4col,
+  .schedule-box {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 1.5rem 1rem !important;
+    gap: 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Make every child inside these blocks take 100% full width */
+  .sanctuary-grid > *,
+  .rozzers-banner > *,
+  .golfbar-card > *,
+  .pub-banner > *,
+  .highlights-grid > *,
+  .rooms-grid > *,
+  .two-col-section > *,
+  .contact-grid > *,
+  .voucher-card > *,
+  .feature-box > *,
+  .accolades-box > *,
+  .golfbase-box > *,
+  .breakfast-section > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .booking-bar {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 1.25rem 1rem !important;
+  }
+
+  .section {
+    padding: 3rem 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .sanctuary-img-wrapper,
+  .breakfast-img-wrapper,
+  .room-img-wrapper {
+    height: 220px !important;
+    width: 100% !important;
+  }
+
+  .btn-row {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .btn-row > * {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* ==========================================================================
+   PHONE: max-width 600px
+   ========================================================================== */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 75vh !important;
+    padding: 6rem 0.85rem 2.5rem 0.85rem !important;
+  }
+
+  .section {
+    padding: 2.5rem 0.75rem !important;
+  }
+
+  .gallery-photo-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem !important;
+  }
+  .gallery-photo-grid img { height: 130px !important; }
+
+  .sanctuary-img-wrapper,
+  .breakfast-img-wrapper,
+  .room-img-wrapper {
+    height: 180px !important;
+  }
+}
+
+
+
+/* --- SVG Icon Size Fixes for Static Sites --- */
+svg {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  stroke: #D4AF37;
+  fill: none;
+  flex-shrink: 0;
+}
+svg.w-4, svg[class*="w-4"] {
+  width: 14px !important;
+  height: 14px !important;
+  max-width: 14px !important;
+  max-height: 14px !important;
+}
+svg.w-6, svg[class*="w-6"] {
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+}
+
+/* ==========================================================================
+   ULTRA-LUXURY RESPONSIVE OVERRIDES (v5_20260802)
+   Fixes header image visibility, guarantees 1-column vertical alignment on mobile,
+   and prevents any side-by-side squeezing or element overflow.
+   ========================================================================== */
+
+/* --- Global Reset & Viewport Constraints --- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, span, a, label, td, th, blockquote {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+img, video, iframe, embed, object, svg {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/* ==========================================================================
+   HERO HEADER: FULL IMAGE VISIBILITY & BEAUTIFUL PROPORTIONS
+   ========================================================================== */
+.hero {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 82vh !important;
+  padding: 8rem 1.5rem 4rem 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  
+  background-color: #050E0A !important;
+}
+
+.hero-bg {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  z-index: 1 !important;
+  filter: brightness(0.85) !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 5 !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 4.5rem) !important;
+  line-height: 1.15 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 1.25rem !important;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.7) !important;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem) !important;
+  line-height: 1.6 !important;
+  color: rgba(250, 248, 245, 0.9) !important;
+  max-width: 750px !important;
+  margin: 0 auto 2rem auto !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7) !important;
+}
+
+.hero-tag {
+  display: inline-block !important;
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem) !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: #D4AF37 !important;
+  background: rgba(10, 27, 20, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  padding: 0.4rem 1.2rem !important;
+  border-radius: 50px !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* ==========================================================================
+   BOOKING BAR IN NATURAL FLOW
+   ========================================================================== */
+.booking-bar-wrapper {
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 2rem auto 0 auto !important;
+  z-index: 10 !important;
+}
+
+.booking-bar {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 1.25rem !important;
+  padding: 1.5rem !important;
+  background: rgba(17, 40, 30, 0.92) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6) !important;
+}
+
+/* ==========================================================================
+   NAVBAR & BURGER MENU
+   ========================================================================== */
+.navbar {
+  box-sizing: border-box !important;
+  max-width: calc(100vw - 24px) !important;
+  
+}
+
+@media (min-width: 1025px) {
+  .navbar {
+    top: 15px !important;
+    padding: 0.75rem 1.5rem !important;
+    gap: 1rem !important;
+  }
+  .brand-title {
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem) !important;
+    white-space: nowrap !important;
+  }
+  .nav-links {
+    display: flex !important;
+    gap: clamp(0.5rem, 1.1vw, 1.4rem) !important;
+    align-items: center !important;
+    list-style: none !important;
+  }
+  .nav-links a {
+    font-size: clamp(0.65rem, 0.8vw, 0.78rem) !important;
+    white-space: nowrap !important;
+  }
+  .nav-book-btn { display: flex !important; }
+  .mobile-toggle { display: none !important; }
+}
+
+@media (max-width: 1024px) {
+  .top-bar { display: none !important; }
+
+  .navbar {
+    top: 8px !important;
+    width: calc(100% - 20px) !important;
+    padding: 0.75rem 1rem !important;
+  }
+  .brand-title { font-size: 1.25rem !important; }
+
+  .nav-links:not(.active) { display: none !important; }
+  .nav-book-btn { display: none !important; }
+
+  .mobile-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    z-index: 1100 !important;
+  }
+  .mobile-toggle span {
+    display: block !important;
+    width: 22px !important;
+    height: 2px !important;
+    background-color: #D4AF37 !important;
+    transition: all 0.3s ease !important;
+  }
+  .mobile-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+  }
+  .mobile-toggle.active span:nth-child(2) { opacity: 0 !important; }
+  .mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 88% !important;
+    max-width: 360px !important;
+    height: 100vh !important;
+    background: rgba(8, 11, 15, 0.98) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 0.85rem !important;
+    padding: 5rem 1.75rem 2.5rem 1.75rem !important;
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.9) !important;
+    border-left: 1px solid rgba(212, 175, 55, 0.3) !important;
+    overflow-y: auto !important;
+    z-index: 1050 !important;
+  }
+  .nav-links.active li { width: 100% !important; list-style: none !important; }
+  .nav-links.active a {
+    font-size: 1rem !important;
+    color: #FAF8F5 !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 0.75rem 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE & TABLET: STRICT SINGLE-COLUMN VERTICAL STACKING FOR ALL SECTIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Force single column vertical layout for ALL grids and banners */
+  .sanctuary-grid,
+  .rozzers-banner,
+  .golfbar-card,
+  .pub-banner,
+  .highlights-grid,
+  .rooms-grid,
+  .two-col-section,
+  .contact-grid,
+  .voucher-card,
+  .feature-box,
+  .accolades-box,
+  .golfbase-box,
+  .breakfast-section,
+  .offers-grid,
+  .packages-grid,
+  .grid-2col,
+  .grid-3col,
+  .grid-4col,
+  .schedule-box {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 1.5rem 1rem !important;
+    gap: 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Make every child inside these blocks take 100% full width */
+  .sanctuary-grid > *,
+  .rozzers-banner > *,
+  .golfbar-card > *,
+  .pub-banner > *,
+  .highlights-grid > *,
+  .rooms-grid > *,
+  .two-col-section > *,
+  .contact-grid > *,
+  .voucher-card > *,
+  .feature-box > *,
+  .accolades-box > *,
+  .golfbase-box > *,
+  .breakfast-section > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .booking-bar {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 1.25rem 1rem !important;
+  }
+
+  .section {
+    padding: 3rem 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .sanctuary-img-wrapper,
+  .breakfast-img-wrapper,
+  .room-img-wrapper {
+    height: 220px !important;
+    width: 100% !important;
+  }
+
+  .btn-row {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .btn-row > * {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* ==========================================================================
+   PHONE: max-width 600px
+   ========================================================================== */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 75vh !important;
+    padding: 6rem 0.85rem 2.5rem 0.85rem !important;
+  }
+
+  .section {
+    padding: 2.5rem 0.75rem !important;
+  }
+
+  .gallery-photo-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem !important;
+  }
+  .gallery-photo-grid img { height: 130px !important; }
+
+  .sanctuary-img-wrapper,
+  .breakfast-img-wrapper,
+  .room-img-wrapper {
+    height: 180px !important;
+  }
+}
+
+
+/* ==========================================================================
+   PRISTINE NAVBAR & TOP BAR NON-OVERLAPPING STYLES
+   ========================================================================== */
+
+/* Top Bar: Always Relative Block above Navbar */
+.top-bar {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 1001 !important;
+  background: #050E0A !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
+  padding: 0.5rem 1.5rem !important;
+  font-size: 0.75rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  color: #B3C2BA !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5) !important;
+}
+
+.top-bar-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+}
+
+.top-bar a {
+  color: #D4AF37 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.top-bar a:hover {
+  color: #F3E5AB !important;
+  text-decoration: underline !important;
+}
+
+/* Navbar: Strictly Sticky/Block Below Top Bar, Never Overlapping */
+.navbar {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(10, 24, 18, 0.96) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 0 !important;
+  padding: 0.65rem 1.5rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+  overflow: visible !important;
+}
+
+/* On Screens >= 1280px: Show Nav Links in 1 Clean Compact Line */
+@media (min-width: 1280px) {
+  .nav-links {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-wrap: nowrap !important;
+  }
+  .nav-links li a {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: #E2E8F0 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    padding: 0.35rem 0.45rem !important;
+    border-radius: 4px !important;
+    transition: all 0.25s ease !important;
+  }
+  .nav-links li a:hover, .nav-links li a.active {
+    color: #D4AF37 !important;
+    background: rgba(212, 175, 55, 0.12) !important;
+  }
+  .mobile-toggle {
+    display: none !important;
+  }
+}
+
+/* On Screens < 1280px (Laptops, Tablets, Mobile): Hide Inline Nav Links, Show Burger Menu Toggle */
+@media (max-width: 1279px) {
+  .nav-links {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 30px !important;
+    height: 20px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    z-index: 1005 !important;
+    padding: 0 !important;
+  }
+  .mobile-toggle span {
+    width: 100% !important;
+    height: 2px !important;
+    background-color: #D4AF37 !important;
+    border-radius: 2px !important;
+    transition: all 0.3s ease !important;
+  }
+}

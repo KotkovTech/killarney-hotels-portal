@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Killarney Luxury Hotels Collection | World-Class Redesign Portal</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #07080A;
+      --bg-card: #11141A;
+      --accent-gold: #D4AF37;
+      --accent-gold-hover: #F3E5AB;
+      --text-main: #F5F6F8;
+      --text-muted: #9BA1B0;
+      --border-gold: rgba(212, 175, 55, 0.3);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { 
+      overflow-x: hidden; 
+      width: 100%; 
+      max-width: 100vw; 
+      position: relative; 
+      -webkit-text-size-adjust: 100%;
+    }
+    body { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      background-color: var(--bg-dark); 
+      color: var(--text-main); 
+      min-height: 100vh; 
+      padding: 3rem 1.25rem; 
+    }
+
+    .header { text-align: center; max-width: 950px; margin: 0 auto 3rem auto; }
+    .header-badge { 
+      color: var(--accent-gold); 
+      font-size: 0.75rem; 
+      letter-spacing: 0.3em; 
+      text-transform: uppercase; 
+      margin-bottom: 1rem; 
+      display: inline-block; 
+      background: rgba(212,175,55,0.08);
+      border: 1px solid var(--border-gold);
+      padding: 0.45rem 1.5rem;
+      border-radius: 50px;
+    }
+    .header-title { 
+      font-family: 'Playfair Display', serif; 
+      font-size: clamp(2rem, 5.5vw, 3.8rem); 
+      color: #FFF; 
+      margin-bottom: 1.2rem; 
+      line-height: 1.15;
+    }
+    .header-desc { 
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem); 
+      color: var(--text-muted); 
+      line-height: 1.7; 
+    }
+
+    .grid-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    
+    /* Desktop / Laptop / Tablet (>= 768px):
+       STRICTLY 3 HORIZONTAL COLUMNS (1fr 1fr 1fr) */
+    @media (min-width: 768px) {
+      .grid { 
+        display: grid !important; 
+        grid-template-columns: 1fr 1fr 1fr !important; 
+        gap: 1.25rem !important; 
+        width: 100% !important;
+      }
+    }
+
+    /* Mobile Phones (< 768px):
+       STRICTLY 1 VERTICAL COLUMN */
+    @media (max-width: 767px) {
+      .grid { 
+        display: grid !important; 
+        grid-template-columns: 1fr !important; 
+        gap: 1.5rem !important; 
+        width: 100% !important;
+      }
+    }
+    
+    .card { 
+      background: var(--bg-card); 
+      border: 1px solid var(--border-gold); 
+      border-radius: 8px; 
+      overflow: hidden; 
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+      display: flex; 
+      flex-direction: column;
+      height: 100%;
+    }
+    .card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 20px 45px rgba(212, 175, 55, 0.2); 
+      border-color: var(--accent-gold); 
+    }
+
+    .card-img-wrapper {
+      height: 220px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .card-img { 
+      height: 100%; 
+      width: 100%; 
+      object-fit: cover; 
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .card:hover .card-img {
+      transform: scale(1.06);
+    }
+    .card-body { 
+      padding: 1.5rem; 
+      flex: 1; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-between; 
+    }
+    .card-tag { 
+      color: var(--accent-gold); 
+      font-size: 0.72rem; 
+      letter-spacing: 0.18em; 
+      text-transform: uppercase; 
+      margin-bottom: 0.6rem; 
+      display: block; 
+      font-weight: 600;
+    }
+    .card-title { 
+      font-family: 'Playfair Display', serif; 
+      font-size: clamp(1.3rem, 1.8vw, 1.85rem); 
+      color: #FFF; 
+      margin-bottom: 0.85rem; 
+      line-height: 1.25;
+    }
+    .card-text { 
+      color: var(--text-muted); 
+      font-size: 0.85rem; 
+      margin-bottom: 1.5rem; 
+      line-height: 1.6; 
+    }
+
+    .btn-group { display: flex; gap: 0.75rem; width: 100%; }
+    .btn-launch { 
+      width: 100%; 
+      background: linear-gradient(135deg, var(--accent-gold) 0%, #B89628 100%); 
+      color: #0A0C0E; 
+      text-align: center; 
+      padding: 0.85rem 1rem; 
+      border-radius: 4px; 
+      font-weight: 700; 
+      text-transform: uppercase; 
+      letter-spacing: 0.1em; 
+      font-size: 0.75rem; 
+      text-decoration: none; 
+      transition: all 0.3s ease; 
+      display: block;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+    }
+    .btn-launch:hover { 
+      background: linear-gradient(135deg, var(--accent-gold-hover) 0%, var(--accent-gold) 100%); 
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+    }
+
+    footer { text-align: center; margin-top: 4rem; color: var(--text-muted); font-size: 0.85rem; }
+    footer a { color: var(--accent-gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="header-badge">WORLD-CLASS REDESIGN COLLECTION</span>
+    <h1 class="header-title">Killarney Luxury Hotels</h1>
+    <p class="header-desc">Three iconic Killarney hotel websites completely reimagined with modern editorial design, high-end typography, dynamic booking widgets, and rich hospitality experiences inspired by top international luxury hotels.</p>
+  </div>
+
+  <div class="grid-container">
+    <div class="grid">
+      <!-- Hotel 1 -->
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="./assets/eviston_facade.jpg?v=1785713199686" alt="Eviston House Hotel Building Facade" class="card-img">
+        </div>
+        <div class="card-body">
+          <div>
+            <span class="card-tag">Town Centre Heritage & Danny Mann Pub</span>
+            <h2 class="card-title">Eviston House Hotel</h2>
+            <p class="card-text">Redesigned with bold copper & obsidian luxury accents. Preserving the Danny Mann traditional Irish pub, live music schedule, Colleen Bawn candlelight dining, and fitness suite.</p>
+          </div>
+          <div class="btn-group">
+            <a href="./eviston-house/index.html" class="btn-launch">Explore Website ➔</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel 2 -->
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="./assets/brook_facade.jpg?v=1785713199686" alt="Brook Lodge Hotel Manor Facade" class="card-img">
+        </div>
+        <div class="card-body">
+          <div>
+            <span class="card-tag">4-Star Sanctuary & Private Gardens</span>
+            <h2 class="card-title">Brook Lodge Boutique Hotel</h2>
+            <p class="card-text">Redesigned with emerald silk & champagne gold tones. Highlighting private manicured gardens, award-winning Kerry artisanal breakfast, penthouse suites, and garden views.</p>
+          </div>
+          <div class="btn-group">
+            <a href="./brook-lodge/index.html" class="btn-launch">Explore Website ➔</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel 3 -->
+      <div class="card">
+        <div class="card-img-wrapper">
+          <img src="./assets/killeen_golden_sunset_manor_2026.jpg?v=1785713199686_golden" alt="Killeen House Hotel Golden Sunset Manor Facade" class="card-img">
+        </div>
+        <div class="card-body">
+          <div>
+            <span class="card-tag">19th-Century Estate & Rozzers Fine Dining</span>
+            <h2 class="card-title">Killeen House Hotel</h2>
+            <p class="card-text">Redesigned with stately forest green & vintage gold elegance. Featuring 23 manor guestrooms, award-winning Rozzers Fine Dining Restaurant, and the Golf Ball Bar.</p>
+          </div>
+          <div class="btn-group">
+            <a href="./killeen-house/index.html" class="btn-launch">Explore Website ➔</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Killarney Luxury Hotels Collection • Published to GitHub: <a href="https://github.com/KotkovTech/killarney-hotels-portal" target="_blank">KotkovTech/killarney-hotels-portal</a></p>
+  </footer>
+
+</body>
+</html>
